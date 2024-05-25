@@ -6,7 +6,12 @@ const createRecipeToDB = async (recipe: Recipe) => {
   return result;
 };
 
+const getRecipeById = async (id: string) => {
+  const result = await RecipeModel.findOne({ _id: id });
+  return result;
+};
 
-export const recipeServices={
-    createRecipeToDB,
-}
+export const recipeServices = {
+  createRecipeToDB,
+  getRecipeById,
+};

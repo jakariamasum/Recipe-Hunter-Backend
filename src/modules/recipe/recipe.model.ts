@@ -42,6 +42,7 @@ const RecipeSchema = new Schema<Recipe>({
   watchCount: {
     type: Number,
     default: 0,
+    required: true,
   },
 });
 

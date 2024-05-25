@@ -6,6 +6,6 @@ export interface Recipe {
   country: string;
   category: string;
   creatorEmail: string;
-  watchCount?: number;
-  purchased_by?: string[];
+  watchCount: number;
+  purchased_by: string[];
 }

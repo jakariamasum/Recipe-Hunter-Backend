@@ -2,5 +2,5 @@ export interface User {
   displayName: string;
   photoURL: string;
   email: string;
-  coin?: number;
+  coin: number;
 }
