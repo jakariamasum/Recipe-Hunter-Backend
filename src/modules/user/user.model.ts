@@ -13,13 +13,15 @@ const UserSchema = new Schema<User>({
     trim: true,
     unique: true,
   },
-  coin: {
-    type: Number,
-    default: 50,
-  },
   photoURL: {
     type: String,
     trim: true,
+    required: true,
+  },
+  coin: {
+    type: Number,
+    default: 50,
+    required: true,
   },
 });
 

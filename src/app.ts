@@ -4,8 +4,8 @@ import { receipeRoutes } from "./modules/recipe/recipe.route";
 import { userRoutes } from "./modules/user/user.route";
 const app: Application = express();
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 app.use("/api/recipes", receipeRoutes);
 app.use("/api/users", userRoutes);

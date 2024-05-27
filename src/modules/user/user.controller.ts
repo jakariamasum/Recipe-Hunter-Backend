@@ -9,23 +9,19 @@ const createUser = async (req: Request, res: Response) => {
     let user = await userServices.getSingleUserByEmailFromDB(req.body.email);
 
     if (!user) {
-      const userData = {
-        ...userInfo,
-        coin: 50,
-      };
-      const user = await userServices.createUserToDB(userData);
+      const result = await userServices.createUserToDB(userInfo);
 
       const authToken = jwt.sign(
-        { email: user.email },
+        { email: result.email },
         process.env.JWT_SECRET as string,
         { expiresIn: "10h" }
       );
 
-      res.status(400).json({
+      res.status(200).json({
         success: true,
         message: "User created successfully",
         authToken,
-        data: user,
+        data: result,
       });
     } else {
       res.status(400).json({
